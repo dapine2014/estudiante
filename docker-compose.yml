@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  profession2:
+    image: profession
+    container_name: profession2
+    environment:
+      URLDB: jdbc:postgresql://172.19.0.1:5433/listenme
+      USER: postgres
+      PWD: alex8080
+      AUTO: update
+      BOOLFORMAT: "true"
+      TRACE: trace
+      EUREKA_URI: http://172.19.0.1:8761/eureka/
+    ports:
+      - "0:0"
+    networks:
+      - data_bases
+
+networks:
+  data_bases:
+    external: true
