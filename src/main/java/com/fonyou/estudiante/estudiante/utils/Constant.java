@@ -1,4 +1,4 @@
-package com.fonyou.studens.studens.utils;
+package com.fonyou.estudiante.estudiante.utils;
 
 public class Constant {
 
