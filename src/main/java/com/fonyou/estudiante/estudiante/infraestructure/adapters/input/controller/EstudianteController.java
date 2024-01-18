@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 
 import static com.fonyou.studens.studens.utils.Constant.*;
 
@@ -21,8 +22,16 @@ public class EstudianteController {
 
     @PostMapping("/saveupdate")
     public  ResponseEntity<Object> setCreateUpdateStudent(@RequestBody EstudianteDto student){
-        Object response =  crudCaseService.saveStuden(student);
-        return ResponseEntity.ok().body(new Responce(SUCCES_OK, RESPONSE_OK, response));
+
+        Object response = crudCaseService.isZonaHoraria(student.getZonaHoraria()) ? crudCaseService.saveStuden(student) : null;
+        if(!(response == null)) {
+
+            return ResponseEntity.ok().body(new Responce(SUCCES_OK, RESPONSE_OK, response));
+
+        } else {
+
+            return  ResponseEntity.badRequest().body(new Responce(SUCCES_ERROR,RESPONSE_ERROR,null));
+        }
     }
 
 

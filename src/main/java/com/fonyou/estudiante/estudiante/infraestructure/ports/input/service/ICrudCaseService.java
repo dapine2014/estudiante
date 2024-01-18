@@ -7,5 +7,6 @@ public interface ICrudCaseService {
    EstudianteDto saveStuden(EstudianteDto estudiante);
    List<EstudianteDto> showAllStuden();
    Optional<EstudianteDto> showEstudentID(Long id);
+   Boolean isZonaHoraria(String zona);
    void deleteStuden(Long id);
 }
