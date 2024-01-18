@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.fonyou.studens.studens.utils.Constant.*;
+import static com.fonyou.estudiante.estudiante.utils.Constant.*;
+
 
 @RestController
 @RequestMapping("/api")
