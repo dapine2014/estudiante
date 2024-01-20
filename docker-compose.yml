@@ -2,10 +2,10 @@ version: '3.1'
 
 services:
   estudiante:
-    image: estudiante
+    image: student
     container_name: estudiante
     environment:
-      URLDB: jdbc:postgresql://172.19.0.1:5433/fonyou
+      URLDB: jdbc:postgresql://172.19.0.1:5433/quiz
       USER: postgres
       PWD: alex8080
       AUTO: update

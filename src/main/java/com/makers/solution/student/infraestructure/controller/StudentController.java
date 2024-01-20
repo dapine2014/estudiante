@@ -10,8 +10,7 @@ import static com.makers.solution.student.utils.Constant.*;
 import java.util.List;
 
 
-
-
+@CrossOrigin(origins = "http://localhost:31000")
 @RestController
 @RequestMapping("/api")
 public class StudentController {
@@ -34,7 +33,7 @@ public class StudentController {
     }
 
 
-    @GetMapping("/find/all")
+    @GetMapping({"/find/all","/"})
     public ResponseEntity<Object> getAllStudent(){
         List<StudentDto> response  = crudCaseService.showAllStuden();
         if(!response.isEmpty()) {
