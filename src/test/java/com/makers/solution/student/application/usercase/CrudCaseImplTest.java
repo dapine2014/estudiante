@@ -52,7 +52,7 @@ class CrudCaseImplTest {
         Student studentEntity = new Student();
         studentEntity.setNombre("Estudiante de prueba");
 
-        when(studentRepository.findAll()).thenReturn(Arrays.asList(studentEntity));
+        when(studentRepository.findAll()).thenReturn(List.of(studentEntity));
 
         // Test
         List<StudentDto> result = crudCase.showAllStuden();
