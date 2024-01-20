@@ -1,4 +1,4 @@
-package com.fonyou.studens.studens.utils;
+package com.makers.solution.student.utils;
 
 import lombok.*;
 

@@ -8,11 +8,11 @@
         <version>3.2.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.fonyou.estudiante</groupId>
-    <artifactId>estudiante</artifactId>
+    <groupId>com.makers.solution.student</groupId>
+    <artifactId>student</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>estudiante</name>
-    <description>estudiante</description>
+    <name>student</name>
+    <description>student</description>
     <properties>
         <java.version>17</java.version>
         <!-- libreria de cloud -->

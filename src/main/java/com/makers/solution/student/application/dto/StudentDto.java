@@ -1,4 +1,4 @@
-package com.fonyou.estudiante.estudiante.application.dto;
+package com.makers.solution.student.application.dto;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -10,7 +10,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Setter
 @Getter
-public class EstudianteDto implements Serializable {
+public class StudentDto implements Serializable {
     private Long id;
     @NotNull
     private String nombre;

@@ -1,27 +1,26 @@
-package com.fonyou.estudiante.estudiante.infraestructure.adapters.input.controller;
+package com.makers.solution.student.infraestructure.controller;
 
-
-import com.fonyou.estudiante.estudiante.application.dto.EstudianteDto;
-import com.fonyou.estudiante.estudiante.infraestructure.ports.input.service.ICrudCaseService;
-import com.fonyou.studens.studens.utils.Responce;
+import com.makers.solution.student.application.dto.StudentDto;
+import com.makers.solution.student.application.service.ICrudCaseService;
+import com.makers.solution.student.utils.Responce;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import static com.makers.solution.student.utils.Constant.*;
 import java.util.List;
 
-import static com.fonyou.estudiante.estudiante.utils.Constant.*;
+
 
 
 @RestController
 @RequestMapping("/api")
-public class EstudianteController {
+public class StudentController {
 
     @Autowired
     private ICrudCaseService crudCaseService;
 
     @PostMapping("/saveupdate")
-    public  ResponseEntity<Object> setCreateUpdateStudent(@RequestBody EstudianteDto student){
+    public  ResponseEntity<Object> setCreateUpdateStudent(@RequestBody StudentDto student){
 
         Object response = crudCaseService.isZonaHoraria(student.getZonaHoraria()) ? crudCaseService.saveStuden(student) : null;
         if(!(response == null)) {
@@ -37,7 +36,7 @@ public class EstudianteController {
 
     @GetMapping("/find/all")
     public ResponseEntity<Object> getAllStudent(){
-        List<EstudianteDto> response  = crudCaseService.showAllStuden();
+        List<StudentDto> response  = crudCaseService.showAllStuden();
         if(!response.isEmpty()) {
 
             return ResponseEntity.ok().body(new Responce(SUCCES_OK, RESPONSE_OK, response));
@@ -55,7 +54,7 @@ public class EstudianteController {
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Object> setDeleteStudent(@PathVariable Long id){
-        crudCaseService.deleteStuden(id);
+        crudCaseService.deleteStudent(id);
         return  ResponseEntity.ok().body(new Responce(SUCCES_OK, RESPONSE_OK, DELETE_OK));
     }
 

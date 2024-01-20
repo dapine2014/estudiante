@@ -1,4 +1,4 @@
-package com.fonyou.estudiante.estudiante.domain.model;
+package com.makers.solution.student.domain.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Getter
 @Entity
 @Table(name = "estudiantes")
-public class Estudiante implements Serializable {
+public class Student implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
