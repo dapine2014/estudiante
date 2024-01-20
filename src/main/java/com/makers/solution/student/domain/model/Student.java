@@ -23,8 +23,14 @@ public class Student implements Serializable {
     @Column(name = "nombre", nullable = false)
     private String nombre;
 
+    @Column(name = "apellido")
+    private String apellido;
+
     @Column(name = "edad", nullable = false)
     private Integer edad;
+
+    @Column(name = "email")
+    private String email;
 
     @NotNull
     @Column(name = "ciudad", nullable = false)

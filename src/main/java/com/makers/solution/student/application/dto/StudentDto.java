@@ -12,12 +12,20 @@ import java.io.Serializable;
 @Getter
 public class StudentDto implements Serializable {
     private Long id;
+
     @NotNull
     private String nombre;
+
+    private String apellido;
+
     @NotNull
     private Integer edad;
+
+    private String email;
     @NotNull
+
     private String ciudad;
+
     @NotNull
     private String zonaHoraria;
 }
