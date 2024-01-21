@@ -32,7 +32,6 @@ class CrudCaseImplTest {
         studentDto.setNombre("Estudiante de prueba");
         studentDto.setEdad(17);
         studentDto.setCiudad("bogota");
-        studentDto.setZonaHoraria("bogota/lima");
 
         Student studentEntity = new Student();
         studentEntity.setNombre("Estudiante de prueba");

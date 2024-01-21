@@ -10,7 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.time.ZoneId;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -57,22 +56,6 @@ public class CrudCaseImpl implements ICrudCaseService {
     @Override
     public void deleteStudent(Long id){
             repository.deleteById(id);
-    }
-
-    @Override
-    public Boolean isZonaHoraria(String zona){
-
-        LOGGER.info("## START VALIDATE ZONA ##");
-        try {
-            ZoneId.of(zona);
-
-            return  true;
-        } catch (Exception e){
-            LOGGER.info("## ERROR IN  ZONA-HORARIA ##");
-
-            return false;
-        }
-
     }
 
 }

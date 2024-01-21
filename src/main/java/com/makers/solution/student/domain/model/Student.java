@@ -35,9 +35,4 @@ public class Student implements Serializable {
     @NotNull
     @Column(name = "ciudad", nullable = false)
     private String ciudad;
-
-    @NotNull
-    @Column(name = "zona_horaria", nullable = false)
-    private String zonaHoraria;
-
 }

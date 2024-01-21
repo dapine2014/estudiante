@@ -25,7 +25,4 @@ public class StudentDto implements Serializable {
     @NotNull
 
     private String ciudad;
-
-    @NotNull
-    private String zonaHoraria;
 }

@@ -10,9 +10,10 @@ import static com.makers.solution.student.utils.Constant.*;
 import java.util.List;
 
 
-@CrossOrigin(origins = "http://localhost:31000")
+
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = {"http://localhost:3000/","http://172.19.0.1:3000/"}, methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE })
 public class StudentController {
 
     @Autowired
@@ -21,7 +22,7 @@ public class StudentController {
     @PostMapping("/saveupdate")
     public  ResponseEntity<Object> setCreateUpdateStudent(@RequestBody StudentDto student){
 
-        Object response = crudCaseService.isZonaHoraria(student.getZonaHoraria()) ? crudCaseService.saveStuden(student) : null;
+        Object response = crudCaseService.saveStuden(student);
         if(!(response == null)) {
 
             return ResponseEntity.ok().body(new Responce(SUCCES_OK, RESPONSE_OK, response));
